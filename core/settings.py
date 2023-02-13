@@ -70,7 +70,7 @@ DATABASES = {
         'NAME': 'crud',
         'USER': os.environ.get('USER'),
         'PASSWORD': os.environ.get('PASSWORD'),
-        'PORT': '3306',
+        'PORT': os.environ.get('PORT'),
     }
 }
 
