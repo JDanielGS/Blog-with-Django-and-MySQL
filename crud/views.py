@@ -27,6 +27,5 @@ def insert(request):
 
 def post(request, id):
     db_post=Post.objects.get(pk=id)
-    context={"post":db_post}
-    print(request.POST[])
+    context={"post":db_post[::-1]}
     return render(request, "blog/post.html", context)
