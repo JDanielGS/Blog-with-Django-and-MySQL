@@ -1,0 +1,21 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}Write | Django Blog{% endblock  %}
+
+{% block main %}
+    <h2>Write The New Post</h2>
+    <div class="w-50 m-auto py-5 bg-beige rounded-5">
+        <form action="{% url 'insert' %}" class="mb-3 mx-2" method="post">
+            {% csrf_token %}
+            <div class="mb-5">
+                <label for="title" class="form-label">Title Of The Post</label>
+                <input type="text" name="title" class="form-control" id="title" placeholder="">
+            </div>
+            <div class="my-5">
+                <label for="body" class="form-label">Content Of The Post</label>
+                <textarea class="form-control" name="body" id="body" rows="3" required></textarea>
+            </div>
+            <input type="submit" value="submit" class="btn btn-primary">
+        </form>
+    </div>
+{% endblock  %}
